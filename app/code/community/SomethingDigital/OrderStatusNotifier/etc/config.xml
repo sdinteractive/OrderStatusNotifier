@@ -32,7 +32,11 @@
     <default>
         <sales>
             <sd_ordernotifier>
-                
+                <enabled>0</enabled>
+                <start_point>1 month</start_point>
+                <wait_period>3 days</wait_period>
+                <emails></emails>
+                <order_status></order_status>
             </sd_ordernotifier>
         </sales>
     </default>
