@@ -1,0 +1,5 @@
+
+#SomethingDigital_OrderStatusNotifer
+app/code/community/SomethingDigital/OrderStatusNotifier
+app/locale/en_US/template/email/sd_ordernotifier
+app/etc/modules/SomethingDigital_OrderStatusNotifer.xml

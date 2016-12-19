@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SomethingDigital_OrderStatusNotifier>
+            <version>1.0.0</version>
+        </SomethingDigital_OrderStatusNotifier>
+    </modules>
+    <global>
+        <models>
+            <sd_ordernotifier>
+                <class>SomethingDigital_OrderStatusNotifier_Model</class>
+            </sd_ordernotifier>
+        </models>
+        <template>
+            <email>
+                <sd_ordernotifier_email_template>
+                    <label>SomethingDigital Order Status Notification</label>
+                    <file>sd_ordernotifier/order_notification.html</file>
+                    <type>html</type>
+                </sd_ordernotifier_email_template>
+            </email>
+        </template>
+    </global>
+    <crontab>
+        <jobs>
+            <sd_ordernotifier_email>
+                <schedule><cron_expr>0 19 * * *</cron_expr></schedule>
+                <run><model>sd_ordernotifier/observer::notifyStatus</model></run>
+            </sd_ordernotifier_email>
+        </jobs>
+    </crontab>
+    <default>
+        <sales>
+            <sd_ordernotifier>
+                
+            </sd_ordernotifier>
+        </sales>
+    </default>
+</config>

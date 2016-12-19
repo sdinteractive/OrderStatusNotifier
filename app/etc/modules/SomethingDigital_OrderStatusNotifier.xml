@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SomethingDigital_OrderStatusNotifier>
+             <active>true</active>
+             <codePool>local</codePool>
+             <depends></depends>
+        </SomethingDigital_OrderStatusNotifier>
+    </modules>
+</config>

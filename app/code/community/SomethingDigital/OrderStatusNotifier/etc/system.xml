@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <sales>
+            <groups>
+                <sd_ordernotifier translate="label" >
+                    <label>Order Status Notifier</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label" >
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </enabled>
+                        <start_point translate="label comment">
+                            <label>Start Point</label>
+                            <comment>Furthest time in the past that you would like to look at orders. Format for this field should be "# timeframe". E.g. a value of "1 month" will only look at orders from 1 month from the current date.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </start_point>
+                        <wait_period translate="label comment">
+                            <label>Wait Period</label>
+                            <comment>The longest amount of time an order can remain in a stuck status. Format for this field should be "# timeframe". E.g. a value of "3 days" will return all orders still pending at least 3 days after placement.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>31</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </wait_period>
+                        <emails translate="label comment">
+                            <label>Notification email</label>
+                            <comment>Email addresses to send the notification in a comma seperated list.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>32</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </emails>
+                        <order_status translate="label comment">
+                            <label>Notify on Status:</label>
+                            <comment>Statuses to check for and notify of if stuck in the selected statuses for more than the time configured in the wait period.</comment>
+                            <source_model>adminhtml/system_config_source_order_status</source_model>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>32</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </order_status>
+                    </fields>
+                </sd_ordernotifier>
+            </groups>
+        </sales>
+    </sections>
+</config>
